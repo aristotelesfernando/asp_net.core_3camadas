@@ -1,0 +1,14 @@
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Data.deps.json
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Data.runtimeconfig.json
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Data.runtimeconfig.dev.json
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Data.dll
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Data.pdb
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Business.dll
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\bin\Debug\netcoreapp2.2\DevIO.Business.pdb
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.csprojAssemblyReference.cache
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.csproj.CoreCompileInputs.cache
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.AssemblyInfoInputs.cache
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.AssemblyInfo.cs
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.csproj.CopyComplete
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.dll
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Data\obj\Debug\netcoreapp2.2\DevIO.Data.pdb

@@ -8,4 +8,3 @@ E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\
 E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.AssemblyInfo.cs
 E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.dll
 E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.pdb
-E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.Business\obj\Debug\netcoreapp2.2\DevIO.Business.csprojAssemblyReference.cache

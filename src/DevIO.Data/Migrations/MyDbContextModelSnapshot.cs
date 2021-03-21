@@ -94,7 +94,7 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(300)");
 
                     b.Property<Guid>("FornecedorId");
 

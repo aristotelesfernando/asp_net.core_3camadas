@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,7 +25,7 @@ namespace DevIO.App.ViewModels
 
         [DisplayName("Descrição")]
         [Required(ErrorMessage = "O campo {0} é obrigatório!")]
-        [StringLength(1000, ErrorMessage = "O campo {0} precisa ter entre {2} e {1}", MinimumLength = 2)]
+        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1}", MinimumLength = 2)]
         public string Descricao { get; set; }
 
         [DisplayName("Imagem do Produto")]
@@ -40,6 +41,7 @@ namespace DevIO.App.ViewModels
 
         public bool Ativo { get; set; }
         /* EF Relation - estabelecendo relacionamento 1 Produto terá um 1 Fornecedor*/
+
         public FornecedorViewModel Fornecedor { get; set; }
 
         public IEnumerable<FornecedorViewModel> Fornecedores { get; set; }

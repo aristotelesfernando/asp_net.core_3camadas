@@ -19,15 +19,18 @@ namespace DevIO.App.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoService _produtoService;
         private readonly IFornecedorRepository _fornecedorRepository;
 
-        public ProdutosController(IProdutoRepository produtoRepository, 
-                                  IMapper mapper, 
-                                  IFornecedorRepository fornecedorRepository)
+        public ProdutosController(IProdutoRepository produtoRepository,
+                                  IMapper mapper,
+                                  IFornecedorRepository fornecedorRepository, IProdutoService produtoService, 
+                                  INotificador notificador) : base(notificador)
         {
             _produtoRepository = produtoRepository;
             _mapper = mapper;
             _fornecedorRepository = fornecedorRepository;
+            _produtoService = produtoService;
         }
 
 
@@ -81,7 +84,9 @@ namespace DevIO.App.Controllers
 
             var produto = _mapper.Map<Produto>(produtoViewModel);
 
-            await _produtoRepository.Adicionar(produto);
+            await _produtoService.Adicionar(produto);
+
+            if (!OperacaoValida()) return View(produtoViewModel);
 
             return RedirectToAction("Index");
         }
@@ -134,7 +139,9 @@ namespace DevIO.App.Controllers
             produtoAtualizacao.Valor = produtoViewModel.Valor;
             produtoAtualizacao.Ativo = produtoViewModel.Ativo;
 
-            await _produtoRepository.Atualizar(_mapper.Map<Produto>(produtoViewModel));            
+            await _produtoService.Atualizar(_mapper.Map<Produto>(produtoViewModel));
+
+            if (!OperacaoValida()) return View(produtoViewModel);
 
             return RedirectToAction("Index");
             
@@ -166,7 +173,11 @@ namespace DevIO.App.Controllers
             {
                 return NotFound();
             }
-            await _produtoRepository.Remover(id);
+            await _produtoService.Remover(id);
+
+            if (!OperacaoValida()) return View(produto);
+
+            TempData["Sucesso"] = "Produto exluido com sucesso!";
 
             return RedirectToAction("Index");
         }

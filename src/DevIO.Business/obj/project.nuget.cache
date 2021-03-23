@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eva5Wis8LRILOg8QQXeedKrxYRgUhn/DVg/ue0vESEQySma2YvBopUnieW6XiO8ptBtqSwlSJcOTPNm3H80wPQ==",
+  "dgSpecHash": "0jzzYV0JFOoo0XKctaJz+cr2XYIkO5YE1pqOZUHv4tBTuIxduX5PnPnr9NkTu9QjynzVbF9RQh6p77/HAt9t8w==",
   "success": true,
   "projectFilePath": "E:\\src\\desenvolvedor.io-cursos\\Dominando_Asp.NET_MVC_CORE\\Minha-AppMVC-Completa\\src\\DevIO.Business\\DevIO.Business.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\arist\\.nuget\\packages\\fluentvalidation\\8.3.0\\fluentvalidation.8.3.0.nupkg.sha512",
     "C:\\Users\\arist\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\arist\\.nuget\\packages\\microsoft.entityframeworkcore\\2.2.0\\microsoft.entityframeworkcore.2.2.0.nupkg.sha512",
     "C:\\Users\\arist\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.2.0\\microsoft.entityframeworkcore.abstractions.2.2.0.nupkg.sha512",

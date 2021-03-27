@@ -48,3 +48,4 @@ E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\
 E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.App\obj\Debug\netcoreapp2.2\Razor\Views\Fornecedores\_DetalhesEndereco.g.cshtml.cs
 E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.App\obj\Debug\netcoreapp2.2\Razor\Views\Produtos\_ListaProdutos.g.cshtml.cs
 E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.App\obj\Debug\netcoreapp2.2\Razor\Views\Fornecedores\_AtualizarEndereco.g.cshtml.cs
+E:\src\desenvolvedor.io-cursos\Dominando_Asp.NET_MVC_CORE\Minha-AppMVC-Completa\src\DevIO.App\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Summary\Default.g.cshtml.cs

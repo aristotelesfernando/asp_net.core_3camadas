@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using DevIO.App.Data;
 using DevIO.App.ViewModels;
 using DevIO.Business.Interfaces;
 using AutoMapper;
 using DevIO.Business.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
+using DevIO.App.Extensions;
 
 namespace DevIO.App.Controllers
 {
+    [Authorize]
     public class ProdutosController : BaseController
     {
         private readonly IMapper _mapper;
@@ -33,7 +32,7 @@ namespace DevIO.App.Controllers
             _produtoService = produtoService;
         }
 
-
+        [AllowAnonymous]
         [Route("lista-produtos")]
         // GET: Produtos
         public async Task<IActionResult> Index()
@@ -41,6 +40,7 @@ namespace DevIO.App.Controllers
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
+        [AllowAnonymous]
         [Route("dados-produto/{id:Guid}")]
         // GET: Produtos/Details/5
         public async Task<IActionResult> Details(Guid id)
@@ -54,6 +54,7 @@ namespace DevIO.App.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto","Ad")]
         [Route("novo-produto")]
         // GET: Produtos/Create
         public async Task<IActionResult> Create()
@@ -66,6 +67,7 @@ namespace DevIO.App.Controllers
         // POST: Produtos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [ClaimsAuthorize("Produto", "Ad")]
         [Route("novo-produto")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -91,6 +93,7 @@ namespace DevIO.App.Controllers
             return RedirectToAction("Index");
         }
 
+        [ClaimsAuthorize("Produto", "Ed")]
         [Route("editar-produto/{id:Guid}")]
         // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(Guid id)
@@ -110,6 +113,7 @@ namespace DevIO.App.Controllers
         // POST: Produtos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [ClaimsAuthorize("Produto", "Ed")]
         [Route("editar-produto/{id:Guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -147,6 +151,7 @@ namespace DevIO.App.Controllers
             
         }
 
+        [ClaimsAuthorize("Produto", "Ex")]
         [Route("excluir-produto/{id:Guid}")]
         // GET: Produtos/Delete/5
         public async Task<IActionResult> Delete(Guid id)
@@ -161,6 +166,7 @@ namespace DevIO.App.Controllers
             return View(produto);
         }
 
+        [ClaimsAuthorize("Produto", "Ex")]
         [Route("excluir-produto/{id:Guid}")]
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]

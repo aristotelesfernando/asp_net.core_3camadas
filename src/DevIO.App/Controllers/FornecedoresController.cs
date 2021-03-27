@@ -6,10 +6,12 @@ using DevIO.App.ViewModels;
 using DevIO.Business.Interfaces;
 using AutoMapper;
 using DevIO.Business.Models;
+using Microsoft.AspNetCore.Authorization;
+using DevIO.App.Extensions;
 
 namespace DevIO.App.Controllers
 {
-
+    [Authorize]
     public class FornecedoresController : BaseController
     {
         //injetando o automapper no controller
@@ -38,6 +40,7 @@ namespace DevIO.App.Controllers
         //}
 
         // GET: Fornecedores
+        [AllowAnonymous]
         [Route("lista-fornecedores")]
         public async Task<IActionResult> Index()
         {
@@ -45,6 +48,7 @@ namespace DevIO.App.Controllers
             return View(_mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos()));
         }
 
+        [AllowAnonymous]
         [Route("dados-fornecedor/{id:Guid}")]
         // GET: Fornecedores/Details/5
         public async Task<IActionResult> Details(Guid id) //(Guid? id)
@@ -73,6 +77,7 @@ namespace DevIO.App.Controllers
             return View(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Ad")]
         [Route("novo-fornecedor")]
         // GET: Fornecedores/Create
         public IActionResult Create()
@@ -83,6 +88,7 @@ namespace DevIO.App.Controllers
         // POST: Fornecedores/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [ClaimsAuthorize("Fornecedor", "Ad")]
         [Route("novo-fornecedor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,6 +104,8 @@ namespace DevIO.App.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [ClaimsAuthorize("Fornecedor", "Ed")]
         [Route("editar-fornecedor/{id:Guid}")]
         // GET: Fornecedores/Edit/5
         public async Task<IActionResult> Edit(Guid id)
@@ -113,6 +121,7 @@ namespace DevIO.App.Controllers
         // POST: Fornecedores/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [ClaimsAuthorize("Fornecedor", "Ed")]
         [Route("editar-fornecedor/{id:Guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -130,6 +139,7 @@ namespace DevIO.App.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [ClaimsAuthorize("Fornecedor", "Ex")]
         [Route("excluir-fornecedor/{id:Guid}")]
         // GET: Fornecedores/Delete/5
         public async Task<IActionResult> Delete(Guid id)
@@ -144,6 +154,7 @@ namespace DevIO.App.Controllers
             return View(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Ex")]
         [Route("excluir-fornecedor/{id:Guid}")]
         // POST: Fornecedores/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -163,6 +174,7 @@ namespace DevIO.App.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [AllowAnonymous]
         [Route("obter-endereco-fornecedor/{id:Guid}")]
         public async Task<IActionResult> ObterEndereco(Guid id)
         {
@@ -176,7 +188,7 @@ namespace DevIO.App.Controllers
             return PartialView("_DetalhesEndereco", fornecedor);
         }
 
-
+        [ClaimsAuthorize("Fornecedor","Ed")]
         [Route("atualizar-endereco-fornecedor/{id:Guid}")]
         public async Task<IActionResult> AtualizarEndereco(Guid id)
         {
@@ -191,6 +203,7 @@ namespace DevIO.App.Controllers
             return PartialView("_AtualizarEndereco", new FornecedorViewModel { Endereco = fornecedor.Endereco });
         }
 
+        [ClaimsAuthorize("Fornecedor", "Ed")]
         [Route("atualizar-endereco-fornecedor/{id:Guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -217,13 +230,6 @@ namespace DevIO.App.Controllers
             var url = Url.Action("ObterEndereco", "Fornecedores", new { id = fornecedorViewModel.Endereco.FornecedorId });
             return Json(new { success = true, url });
         }
-
-
-        // desnecessário
-        //private bool FornecedorViewModelExists(Guid id)
-        //{
-        //    return _context.FornecedorViewModel.Any(e => e.Id == id);
-        //}
 
         private async Task<FornecedorViewModel> ObterFornecedorEndereco(Guid id)
         {
